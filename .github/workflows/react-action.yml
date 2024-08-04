@@ -14,3 +14,18 @@ jobs:
         run: npm ci
       - name: Run all Tests
         run: npm run test
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Build app
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploying...as I dob't have a deployment server thus printing the message only."
