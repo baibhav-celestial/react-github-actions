@@ -2,7 +2,7 @@ name: Output file, getting data from expression
 on: [workflow_dispatch]
 jobs: 
     githubRepoInfo: 
-        runs-on: ubtuntu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Show Github keyword info
               run: echo "${{toJson(github)}}"
